@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 21:33:42 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/12 15:33:42 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/13 18:51:44 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int		main()
 {
 	int		i;
 
-	i = ft_printf("hello%-10.10d", 12345);
+	i = ft_printf("h%*.*d",0,0,0);
 	printf("\n%d", i);
-	printf("\n\n\n\nhello%-10.10d", 12345);
+	printf("\n\n\n\nh%*.*d",0,0,0);
 	return (0);
 }

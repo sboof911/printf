@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 18:18:44 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/12 15:28:51 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/13 18:42:24 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,11 @@ int		ft_traitement_int(va_list list, int j);
 int		ft_intlen(int j);
 int		ft_putnbr_prec(int n, int i);
 int		ft_putnbr_compt(int n);
+void    ft_traitement_int_width(int len, int i, int n);
+void	ft_traitement_int_moin(int len, int i, int n);
+void	ft_traitment_int_prec(int n, int len);
+void	ft_traitement_int_zero(int len, int i, int n);
+void	ft_traitement_null(int n);
 
 
 #endif

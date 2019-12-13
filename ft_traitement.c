@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 18:30:24 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/10 14:34:24 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/13 18:51:17 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int		ft_traitement_prec(const char *s, int i, va_list list)
 	if (s[i] == '*')
 	{
 		g_prec = va_arg(list, int);
+		if (g_prec < 0)
+			g_prec = 0;
 		i++;
 	}
 	else if (ft_isdigit(s[i]))
@@ -65,7 +67,8 @@ void	ft_traitement(const char *s, int i, va_list list)
 	{
 		if (s[i++] == '%')
 		{
-			i = ft_traitement_width(s, i, list);
+			if (ft_isdigit(s[i]) || s[i] == '-' || s[i] == '0' || s[i] == '*')
+				i = ft_traitement_width(s, i, list);
 			if (s[i] == '.')
 				i = ft_traitement_prec(s, i, list);
 		}
