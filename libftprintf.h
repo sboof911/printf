@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 18:18:44 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/13 18:42:24 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/13 22:03:07 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,24 @@ void	ft_lol(int len, char *str);
 int		ft_traitement_int(va_list list, int j);
 int		ft_intlen(int j);
 int		ft_putnbr_prec(int n, int i);
-int		ft_putnbr_compt(int n);
+void	ft_putnbr_compt(int n);
 void    ft_traitement_int_width(int len, int i, int n);
 void	ft_traitement_int_moin(int len, int i, int n);
 void	ft_traitment_int_prec(int n, int len);
 void	ft_traitement_int_zero(int len, int i, int n);
 void	ft_traitement_null(int n);
-
+void	ft_traitement_putstr_prec(char *str);
+void	ft_lol_lol(char *str, int len);
+void	ft_trait_hexa_M(size_t nb);
+void	ft_trait_hexa_m(size_t nb);
+void	ft_put16(size_t nb, int m);
+void	ft_puthexa_compt(size_t h, int m);
+void	ft_traitemt_hexa_zero(unsigned int len, size_t i, unsigned int n, int m);
+void	ft_traitment_hexa_prec(unsigned int n, unsigned int len, int m);
+int		ft_hexalen(unsigned int j);
+void	ft_traitemt_hexa_moin(unsigned int len, size_t i, unsigned int n, int m);
+int		ft_traitement_hexa(va_list list, int j, int m);
+void	ft_traitemt_hexawidth(unsigned int len, size_t i, unsigned int n, int m);
+void	ft_traitement_hexa_null(unsigned int n, int m);
 
 #endif

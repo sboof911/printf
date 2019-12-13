@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_traitement_str2.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/04 21:33:42 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/13 22:06:03 by amaach           ###   ########.fr       */
+/*   Created: 2019/12/13 20:37:24 by amaach            #+#    #+#             */
+/*   Updated: 2019/12/13 20:53:44 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libftprintf.h"
 
-
-
-int		main()
+void	ft_traitement_putstr_prec(char *str)
 {
-	int		i;
+	int	j;
 
-	i = ft_printf("h%x",100);
-	printf("\n%d", i);
-	printf("\n\n\n\nh%x",100);
-	return (0);
+	j = 0;
+	while (str[j] != '\0' && j < g_prec)
+	{
+		ft_putchar(str[j]);
+		g_compt++;
+		j++;
+	}
+}
+
+void	ft_lol_lol(char *str, int len)
+{
+	if (g_width > len || g_width > g_prec)
+		ft_lol(len, str);
+	else
+		ft_traitement_putstr_prec(str);
 }

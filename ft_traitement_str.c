@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 20:20:30 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/10 14:54:30 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/13 20:54:00 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,19 +97,18 @@ int		ft_traitement_str(va_list list, int i)
 	len = 0;
 	len = ft_strlen(str);
 	if (g_moin)
-	{
-		if (g_width > len)
-			ft_lol(len, str);
-	}
+		ft_lol_lol(str, len);
 	else
 	{
-		if (g_width > len)
+		if (g_width > len || g_width > g_prec)
 		{
 			if (g_dot && g_prec < len)
 				ft_traitement_str__prec(str);
 			else
 				ft_traitement_str_(str, len);
 		}
+		else
+			ft_traitement_putstr_prec(str);
 	}
 	return (i + 1);
 }
