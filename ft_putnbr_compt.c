@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 15:19:06 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/15 15:03:38 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/17 18:30:41 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	ft_putnbr_compt(int n)
 	unsigned int	nb;
 	int				len;
 
+	
 	len = ft_intlen(n);
 	if (n < 0 && g_prec < len && g_width < len && g_dot)
 	{

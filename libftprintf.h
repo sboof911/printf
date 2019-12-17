@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 18:18:44 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/15 21:13:42 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/17 18:39:09 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		g_prec;
 int		g_dot;
 int		g_moin;
 int     g_m;
+int     g_p;
 
 int		ft_atoi(const char *s);
 int		ft_isdigit(int c);
@@ -74,5 +75,6 @@ int		ft_put(int i);
 int		ft_ifnega(int i, int n);
 void	ft_someint(int len, int i, int n);
 void	ft_somehexa(int len, int i, unsigned int n, int m);
+void	ft_ifp(void);
 
 #endif

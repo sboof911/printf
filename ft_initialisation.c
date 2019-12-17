@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 18:14:06 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/14 15:59:28 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/17 18:34:20 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	ft_ini(void)
 	g_dot = 0;
 	g_moin = 0;
 	g_m = 0;
+	g_p = 0;
 }
 
 int		ft_initialisation(const char *s, int i)

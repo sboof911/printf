@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 21:33:42 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/15 19:13:08 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/17 18:45:02 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@
 int		main()
 {
 	int		i;
-	i = ft_printf("%10.10xhello%10.10d\n", 12327, 123);
-	printf("%d\n", i);
+	//i = ft_printf("10.4%p\n", (void *) 12327);
+	//printf("%d\n", i);
 	//printf("lol\n");
-	printf("\n%10.10xhello%10.10d", 12327, 123);
+	printf("%u", 515151);
+	ft_printf("%%");
 	return (0);
 }

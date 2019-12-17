@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:03:40 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/15 21:13:53 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/17 18:40:09 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	ft_puthexa_compt(size_t h, int m)
 	size_t	nb;
 
 	nb = h;
+	ft_ifp();
 	if (nb >= 16)
 		ft_put16(nb, m);
 	else
@@ -80,5 +81,15 @@ void	ft_puthexa_compt(size_t h, int m)
 		else
 			ft_putchar(nb + '0');
 		g_compt++;
+	}
+}
+
+void	ft_ifp(void)
+{
+	if (g_p == 1)
+	{
+		ft_putchar('0');
+		ft_putchar('x');
+		g_p = 0;
 	}
 }
