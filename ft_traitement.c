@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 18:30:24 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/15 18:50:28 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/18 16:00:27 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,10 @@ int		ft_traitement_prec(const char *s, int i, va_list list)
 
 void	ft_traitement(const char *s, int i, va_list list)
 {
-	while (s[i] != '\0')
+	int		len;
+
+	len = ft_strlen(s);
+	while (i < len)
 	{
 		i = ft_initialisation(s, i);
 		if (s[i++] == '%')

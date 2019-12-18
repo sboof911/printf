@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 18:18:44 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/17 18:39:09 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/18 15:46:00 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <string.h>
 #include <stdarg.h>
 #include <stdio.h>
+#include <stddef.h>
 
 int		g_compt;
 int		g_zero;
@@ -76,5 +77,14 @@ int		ft_ifnega(int i, int n);
 void	ft_someint(int len, int i, int n);
 void	ft_somehexa(int len, int i, unsigned int n, int m);
 void	ft_ifp(void);
+void	ft_adresse_width(int len, int i, size_t n, int m);
+void	ft_adresse_null(size_t n, int m);
+void	ft_someadresse(int len, int i, size_t n, int m);
+void	ft_adresse_zero(int len, int i, size_t n, int m);
+void	ft_adresse_prec(size_t n, int len, int m);
+int		ft_adresselen(size_t j);
+void	ft_adresse_moin(int len, int i, size_t n, int m);
+int		ft_traitement_hexa(va_list list, int j, int m);
+int		ft_adresse(va_list list, int j, int m);
 
 #endif
