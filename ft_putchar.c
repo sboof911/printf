@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaach <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 15:04:06 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/04 21:42:15 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/20 18:10:48 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
+	g_compt++;
 }

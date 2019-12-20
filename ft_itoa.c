@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaach <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:12:30 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/04 21:27:42 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/20 15:01:19 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static int		ft_len(int n)
 {

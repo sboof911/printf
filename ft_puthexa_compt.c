@@ -6,13 +6,13 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:03:40 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/17 18:40:09 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/20 18:32:58 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-void	ft_trait_hexa_ma(size_t nb)
+void	ft_trait_hexa_ma(unsigned long long nb)
 {
 	if (nb == 10)
 		ft_putchar('A');
@@ -26,10 +26,10 @@ void	ft_trait_hexa_ma(size_t nb)
 		ft_putchar('E');
 	if (nb == 15)
 		ft_putchar('F');
-	g_compt++;
+	
 }
 
-void	ft_trait_hexa_m(size_t nb)
+void	ft_trait_hexa_m(unsigned long long nb)
 {
 	if (nb == 10)
 		ft_putchar('a');
@@ -43,11 +43,14 @@ void	ft_trait_hexa_m(size_t nb)
 		ft_putchar('e');
 	if (nb == 15)
 		ft_putchar('f');
-	g_compt++;
+	
 }
 
-void	ft_put16(size_t nb, int m)
+void	ft_put16(unsigned long long nb, int m)
 {
+	int		i = 0;
+
+i++;
 	ft_puthexa_compt(nb / 16, m);
 	if (nb % 16 > 9)
 	{
@@ -57,13 +60,14 @@ void	ft_put16(size_t nb, int m)
 			ft_trait_hexa_m(nb % 16);
 	}
 	else
+	{
 		ft_putchar(nb % 16 + '0');
-	g_compt++;
+	}
 }
 
-void	ft_puthexa_compt(size_t h, int m)
+void	ft_puthexa_compt(unsigned long long h, int m)
 {
-	size_t	nb;
+	unsigned long long	nb;
 
 	nb = h;
 	ft_ifp();
@@ -80,7 +84,6 @@ void	ft_puthexa_compt(size_t h, int m)
 		}
 		else
 			ft_putchar(nb + '0');
-		g_compt++;
 	}
 }
 

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaach <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 17:49:19 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/04 21:27:58 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/20 15:01:19 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int		ft_atoi(const char *str)
 {

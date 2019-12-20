@@ -6,11 +6,11 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 12:02:20 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/15 18:50:21 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/20 15:01:19 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int		ft_printf(const char *s, ...)
 {

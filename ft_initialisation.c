@@ -6,22 +6,15 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 18:14:06 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/17 18:34:20 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/20 21:03:11 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-
-void	ft_lol(int len, char *str)
-{
-	if (g_dot && g_prec < len)
-		ft_traitement_str_moin_prec(str);
-	else
-		ft_traitement_str_moin(str);
-}
+#include "ft_printf.h"
 
 void	ft_ini(void)
 {
+	g_pc = 0;
 	g_zero = 0;
 	g_width = 0;
 	g_spider = 0;
@@ -38,7 +31,7 @@ int		ft_initialisation(const char *s, int i)
 	while (s[i] != '%' && s[i] != '\0')
 	{
 		ft_putchar(s[i]);
-		g_compt++;
+		
 		i++;
 	}
 	return (i);

@@ -6,11 +6,11 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 18:30:24 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/18 16:00:27 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/20 18:10:23 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int		ft_traitement_width(const char *s, int i, va_list list)
 {
@@ -67,19 +67,34 @@ int		ft_traitement_prec(const char *s, int i, va_list list)
 void	ft_traitement(const char *s, int i, va_list list)
 {
 	int		len;
+	int		pc;
 
 	len = ft_strlen(s);
 	while (i < len)
 	{
 		i = ft_initialisation(s, i);
-		if (s[i++] == '%')
+		if (s[i] == '%')
 		{
+			while (s[i] == '%')
+			{
+				g_pc++;
+				i++;
+			}
 			if (ft_isdigit(s[i]) || s[i] == '-' || s[i] == '0' || s[i] == '*')
 				i = ft_traitement_width(s, i, list);
 			if (s[i] == '.')
 				i = ft_traitement_prec(s, i, list);
 		}
-		if (ft_check(s, i))
+		if (g_pc > 1)
+		{
+			pc = g_pc / 2;
+			while (pc--)
+			{
+				ft_putchar('%');
+				
+			}
+		}
+		if (ft_check(s, i) && (g_pc % 2 == 1))
 			i = ft_checkspec(s, i, list);
 	}
 }

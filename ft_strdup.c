@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_compt.c                                  :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 15:19:06 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/20 21:26:12 by amaach           ###   ########.fr       */
+/*   Created: 2019/10/12 17:34:59 by amaach            #+#    #+#             */
+/*   Updated: 2019/12/20 20:47:42 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr_compt(int n)
+char	*ft_strdup(const char *s)
 {
-	unsigned int	nb;
-	int				len;
+	char	*temp;
+	char	*s1;
+	int		i;
 
-	
-	len = ft_intlen(n);
-	if (n < 0 && g_prec < len && g_width < len && g_dot)
+	i = 0;
+	s1 = (char *)s;
+	if (!(temp = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1))))
+		return (0);
+	while (s1[i] != '\0')
 	{
-		nb = n * -1;
+		temp[i] = s1[i];
+		i++;
 	}
-	if (n < 0)
-		nb = n * -1;
-	else
-		nb = n;
-	if (nb >= 10)
-	{
-		ft_putnbr_compt(nb / 10);
-		ft_putchar(nb % 10 + '0');
-		
-	}
-	else
-	{
-		ft_putchar(nb + '0');
-	}
+	temp[i] = '\0';
+	return (temp);
 }

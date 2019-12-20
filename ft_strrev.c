@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaach <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 03:44:59 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/04 21:30:57 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/20 15:01:19 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 char	*ft_strrev(char *str)
 {

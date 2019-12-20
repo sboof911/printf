@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_compt.c                                  :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 15:19:06 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/20 21:26:12 by amaach           ###   ########.fr       */
+/*   Created: 2019/10/17 15:06:35 by amaach            #+#    #+#             */
+/*   Updated: 2019/12/20 19:36:51 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr_compt(int n)
+void	ft_putstr(char *s)
 {
-	unsigned int	nb;
-	int				len;
+	int		i;
 
-	
-	len = ft_intlen(n);
-	if (n < 0 && g_prec < len && g_width < len && g_dot)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		nb = n * -1;
-	}
-	if (n < 0)
-		nb = n * -1;
-	else
-		nb = n;
-	if (nb >= 10)
-	{
-		ft_putnbr_compt(nb / 10);
-		ft_putchar(nb % 10 + '0');
-		
-	}
-	else
-	{
-		ft_putchar(nb + '0');
+		ft_putchar(s[i]);
+		i++;
 	}
 }

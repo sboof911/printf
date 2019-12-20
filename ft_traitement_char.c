@@ -6,8 +6,39 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 17:18:07 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/18 17:21:29 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/20 14:59:01 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft
+#include "ft_printf.h"
+
+int     ft_traitement_char(va_list list, int i)
+{
+    int     c;
+    int     j;
+
+    j = 0;
+    if (!g_p)
+        c = va_arg(list, int);
+    else
+        c = '%';
+    if (g_moin)
+    {
+        ft_putchar(c);
+        if (g_width > 1)
+        {
+            while (j < g_width)
+                j = ft_put(j);
+        }
+    }
+    else if (!g_zero)
+    {
+        if (g_width > 1)
+        {
+            while (j < g_width)
+                j = ft_put(j);
+        }
+        ft_putchar(c);
+    }
+    return (i + 1);
+}

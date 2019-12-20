@@ -6,26 +6,22 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 14:58:00 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/15 19:05:15 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/20 18:12:23 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_traitement_int_zero(int len, int i, int n)
 {
 	if (g_width > len && g_dot == 0)
 	{
 		if (n < 0)
-		{
 			ft_putchar('-');
-			g_compt++;
-		}
 		while (i < g_width - len)
 		{
 			ft_putchar('0');
 			i++;
-			g_compt++;
 		}
 	}
 	if (g_width > len && g_dot == 1)
@@ -49,10 +45,7 @@ void	ft_traitment_int_prec(int n, int len)
 	if (g_prec == 0 && g_dot && n == 0)
 		write(1, "", 0);
 	else if (n < 0 && !g_moin)
-	{
 		ft_putchar('-');
-		g_compt++;
-	}
 	else if (g_prec < len)
 		ft_putnbr_compt(n);
 	else
@@ -61,7 +54,6 @@ void	ft_traitment_int_prec(int n, int len)
 		{
 			ft_putchar('0');
 			i++;
-			g_compt++;
 		}
 		ft_putnbr_compt(n);
 	}
@@ -87,10 +79,7 @@ int		ft_intlen(int j)
 void	ft_traitement_int_moin(int len, int i, int n)
 {
 	if (n < 0)
-	{
 		ft_putchar('-');
-		g_compt++;
-	}
 	if (g_width > len)
 		ft_someint(len, i, n);
 	else

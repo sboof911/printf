@@ -6,13 +6,13 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 14:44:13 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/18 15:45:51 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/20 21:26:54 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-void	ft_adresse_zero(int len, int i, size_t n, int m)
+void	ft_adresse_zero(int len, int i, unsigned long long n, int m)
 {
 	if (g_width > len && g_dot == 0)
 	{
@@ -20,7 +20,7 @@ void	ft_adresse_zero(int len, int i, size_t n, int m)
 		{
 			ft_putchar('0');
 			i++;
-			g_compt++;
+			
 		}
 	}
 	if (g_width > len && g_dot)
@@ -34,7 +34,7 @@ void	ft_adresse_zero(int len, int i, size_t n, int m)
 		ft_puthexa_compt(n, m);
 }
 
-void	ft_adresse_prec(size_t n, int len, int m)
+void	ft_adresse_prec(unsigned long long n, int len, int m)
 {
 	int		i;
 
@@ -49,13 +49,13 @@ void	ft_adresse_prec(size_t n, int len, int m)
 		{
 			ft_putchar('0');
 			i++;
-			g_compt++;
+			
 		}
 		ft_puthexa_compt(n, m);
 	}
 }
 
-int		ft_adresselen(size_t j)
+int		ft_adresselen(unsigned long long j)
 {
 	int	i;
 
@@ -70,7 +70,7 @@ int		ft_adresselen(size_t j)
 	return (i);
 }
 
-void	ft_adresse_moin(int len, int i, size_t n, int m)
+void	ft_adresse_moin(int len, int i, unsigned long long n, int m)
 {
 	if (g_width > len)
 	{
@@ -92,18 +92,19 @@ void	ft_adresse_moin(int len, int i, size_t n, int m)
 				i = ft_put(i);
 		}
 		else
-			ft_putnbr_compt(n);
+			ft_puthexa_compt(n, m);
 	}
 }
 
 int		ft_adresse(va_list list, int j, int m)
 {
-	size_t	n;
+	unsigned long long	n;
 	int		len;
 	int		i;
 
 	i = 0;
-	n = va_arg(list, unsigned int);
+	n = va_arg(list, unsigned long long);
+	g_width = g_width - 2;
 	len = ft_adresselen(n);
 	if (g_width == 0 && g_prec == 0)
 		ft_adresse_null(n, m);

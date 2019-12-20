@@ -6,11 +6,11 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:58:02 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/15 19:10:20 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/20 18:14:30 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_traitement_hexa_width(int len, int i, unsigned int n, int m)
 {
@@ -21,7 +21,6 @@ void	ft_traitement_hexa_width(int len, int i, unsigned int n, int m)
 			while (i < g_width - g_prec)
 			{
 				ft_putchar(' ');
-				g_compt++;
 				i++;
 			}
 			ft_traitment_hexa_prec(n, len, m);
@@ -34,7 +33,6 @@ void	ft_traitement_hexa_width(int len, int i, unsigned int n, int m)
 		while (i < g_width - len)
 		{
 			ft_putchar(' ');
-			g_compt++;
 			i++;
 		}
 		ft_puthexa_compt(n, m);
@@ -43,7 +41,7 @@ void	ft_traitement_hexa_width(int len, int i, unsigned int n, int m)
 
 void	ft_traitement_hexa_null(unsigned int n, int m)
 {
-	if (n == 0)
+	if ((n == 0) & g_width & g_prec)
 		write(1, "", 0);
 	else
 		ft_puthexa_compt(n, m);

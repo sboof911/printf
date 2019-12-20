@@ -6,17 +6,16 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 17:52:31 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/15 21:11:42 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/20 18:11:49 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int		ft_put(int i)
 {
 	ft_putchar(' ');
 	i++;
-	g_compt++;
 	return (i);
 }
 
@@ -54,14 +53,13 @@ void	ft_traitement_int_width(int len, int i, int n)
 
 void	ft_traitement_null(int n)
 {
-	if (n == 0)
+	if ((n == 0) & g_width & g_prec)
 		write(1, "", 0);
 	else
 	{
 		if (n < 0)
 		{
 			ft_putchar('-');
-			g_compt++;
 		}
 		ft_putnbr_compt(n);
 	}

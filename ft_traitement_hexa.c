@@ -6,11 +6,11 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:48:50 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/15 19:12:24 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/20 18:11:20 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_traitemt_hexa_zero(int len, int i, unsigned int n, int m)
 {
@@ -20,7 +20,6 @@ void	ft_traitemt_hexa_zero(int len, int i, unsigned int n, int m)
 		{
 			ft_putchar('0');
 			i++;
-			g_compt++;
 		}
 	}
 	if (g_width > len && g_dot)
@@ -49,7 +48,6 @@ void	ft_traitment_hexa_prec(unsigned int n, int len, int m)
 		{
 			ft_putchar('0');
 			i++;
-			g_compt++;
 		}
 		ft_puthexa_compt(n, m);
 	}

@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amaach <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: amaach <amaach@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/29 09:43:16 by amaach            #+#    #+#              #
-#    Updated: 2019/11/29 14:03:38 by amaach           ###   ########.fr        #
+#    Updated: 2019/12/20 15:01:19 by amaach           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+NAME = ft_printf.a
 
 FLAGS = -Wall -Wextra -Werror -c
 
