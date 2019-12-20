@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 14:58:00 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/20 18:12:23 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/20 22:29:42 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,20 @@ void	ft_traitement_int_zero(int len, int i, int n)
 			i++;
 		}
 	}
-	if (g_width > len && g_dot == 1)
+	else if (g_width > len && g_dot == 1)
 	{
 		i = ft_ifnega(i, n);
 		while (i < g_width - len)
 			i = ft_put(i);
 	}
-	if (g_prec == 0 && g_dot && n == 0)
+	else if (g_prec == 0 && g_dot && n == 0)
 		i = ft_put(i);
 	else
-		ft_putnbr_compt(n);
+	{
+		if (n < 0)
+			ft_putchar('-');
+	}
+	ft_putnbr_compt(n);
 }
 
 void	ft_traitment_int_prec(int n, int len)
@@ -65,7 +69,10 @@ int		ft_intlen(int j)
 
 	i = 0;
 	if (j < 0)
+	{
 		j *= -1;
+		i++;
+	}
 	while (j >= 10)
 	{
 		j /= 10;
