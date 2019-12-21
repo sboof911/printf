@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 14:44:05 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/20 18:32:58 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/21 21:51:06 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,32 @@ void	ft_adresse_width(int len, int i, unsigned long long n, int m)
 
 void	ft_adresse_null(unsigned long long n, int m)
 {
-	if ((n == 0) & g_prec & g_width)
-		write(1, "", 0);
-	else
-		ft_puthexa_compt(n, m);
+	if (g_width == -1)
+		g_width++;
+	if (g_width == -2)
+		g_width += 2;
+	if ((n == 0) && !g_width && !g_prec && !g_dot)
+		ft_puthexa_compt('0', m);
+	else if ((n == 0) && g_width == 0 && g_prec == 0 && g_dot)
+	{
+		ft_putchar('0');
+		ft_putchar('x');
+	}
+	else if (g_width > 0 && n == 0 && !g_prec && g_dot && !g_moin)
+	{
+		while (g_width--)
+			ft_putchar(' ');
+		ft_putchar('0');
+		ft_putchar('x');
+	}
+	else if (g_width > 0 && n == 0 && !g_prec && g_dot && g_moin)
+	{
+		ft_putchar('0');
+		ft_putchar('x');
+		while (g_width--)
+			ft_putchar(' ');
+
+	}
 }
 
 void	ft_someadresse(int len, int i, unsigned long long n, int m)

@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 19:34:23 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/20 18:20:30 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/21 16:33:06 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,15 @@ int		ft_checkspec(const char *s, int i, va_list list)
 		g_p = 1;
 		i = ft_adresse(list, i, m);
 	}
+	else if (s[i] == 'u')
+		i = ft_traitement_u(list, i);
 	return (i);
 }
 
 int		ft_check(const char *s, int i)
 {
 	if (s[i] == 'd' || s[i] == 's' || s[i] == '%' || s[i] == 'i' || s[i] == 'c'
-			|| s[i] == 'X' || s[i] == 'p' || s[i] == 'x')
+			|| s[i] == 'X' || s[i] == 'p' || s[i] == 'x' || s[i] == 'u')
 		return (1);
 	return (0);
 }

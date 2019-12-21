@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 18:18:44 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/20 21:11:39 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/21 20:27:53 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,14 @@ int		ft_adresse(va_list list, int j, int m);
 int     ft_traitement_char(va_list list, int i);
 char	*ft_strdup(const char *s);
 void	ft_less_dot(void);
+int		ft_traitement_u(va_list list, int j);
+void	ft_traitement_u_moin(int len, int i, unsigned int n);
+void	ft_traitment_u_prec(unsigned int n, int len);
+void	ft_traitement_u_zero(int len, int i, unsigned int n);
+void	ft_traitement_u_width(int len, int i, unsigned int n);
+void	ft_traitement_u_null(unsigned int n);
+void	ft_some_u(int len, int i, unsigned int n);
+int		ft_u_len(unsigned int j);
+void	ft_putnbr_u_compt(unsigned int n);
 
 #endif

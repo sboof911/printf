@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_traitement_hexa.c                               :+:      :+:    :+:   */
+/*   ft_traitement_u.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/13 21:48:50 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/21 21:09:51 by amaach           ###   ########.fr       */
+/*   Created: 2019/12/21 16:13:56 by amaach            #+#    #+#             */
+/*   Updated: 2019/12/21 20:27:00 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_traitemt_hexa_zero(int len, int i, unsigned int n, int m)
+void	ft_traitement_u_zero(int len, int i, unsigned int n)
 {
 	if (g_width > len && g_dot == 0)
 	{
@@ -22,26 +22,31 @@ void	ft_traitemt_hexa_zero(int len, int i, unsigned int n, int m)
 			i++;
 		}
 	}
-	if (g_width > len && g_dot)
+	else if (g_width > len && g_dot == 1)
 	{
 		while (i < g_width - len)
 			i = ft_put(i);
 	}
-	if (g_prec == 0 && g_dot && n == 0)
+	else if (g_prec == 0 && g_dot && n == 0)
 		i = ft_put(i);
 	else
-		ft_puthexa_compt(n, m);
+	{
+	}
+	ft_putnbr_u_compt(n);
 }
 
-void	ft_traitment_hexa_prec(unsigned int n, int len, int m)
+void	ft_traitment_u_prec(unsigned int n, int len)
 {
 	int		i;
 
 	i = 0;
+
 	if (g_prec == 0 && g_dot && n == 0)
 		write(1, "", 0);
 	else if (g_prec < len)
-		ft_puthexa_compt(n, m);
+	{
+		ft_putnbr_u_compt(n);
+	}
 	else
 	{
 		while (i < g_prec - len)
@@ -49,74 +54,50 @@ void	ft_traitment_hexa_prec(unsigned int n, int len, int m)
 			ft_putchar('0');
 			i++;
 		}
-		ft_puthexa_compt(n, m);
+		ft_putnbr_u_compt(n);
 	}
 }
 
-int		ft_hexalen(unsigned int j)
-{
-	int	i;
-
-	i = 0;
-	while (j >= 16)
-	{
-		j /= 16;
-		i++;
-	}
-	if (j < 16)
-		i++;
-	return (i);
-}
-
-void	ft_traitemt_hexa_moin(int len, int i, unsigned int n, int m)
+void	ft_traitement_u_moin(int len, int i, unsigned int n)
 {
 	if (g_width > len)
-	{
-		if (g_prec > len)
-			ft_somehexa(len, i, n, m);
-		else
-		{
-			ft_puthexa_compt(n, m);
-			while (i < g_width - len)
-				i = ft_put(i);
-		}
-	}
+		ft_some_u(len, i, n);
 	else
 	{
 		if (g_prec > len)
 		{
-			ft_traitment_hexa_prec(n, len, m);
+			ft_traitment_int_prec(n, len);
 			while (i < g_width - g_prec)
 				i = ft_put(i);
 		}
 		else
-			ft_puthexa_compt(n, m);
+			ft_putnbr_u_compt(n);
 	}
 }
 
-int		ft_traitement_hexa(va_list list, int j, int m)
+int		ft_traitement_u(va_list list, int j)
 {
-	unsigned int	n;
+	unsigned int    n;
 	int				len;
 	int				i;
 
 	i = 0;
 	n = va_arg(list, unsigned int);
-	len = ft_hexalen(n);
+	len = ft_u_len(n);
 	if (g_prec == 0 && n == 0 && g_dot)
-		ft_traitement_hexa_null(n, m);
+		ft_traitement_u_null(n);
 	else if (g_zero && !g_prec)
-		ft_traitemt_hexa_zero(len, i, n, m);
+		ft_traitement_u_zero(len, i, n);
 	else if (g_moin)
-		ft_traitemt_hexa_moin(len, i, n, m);
+		ft_traitement_u_moin(len, i, n);
 	else if (g_width)
-		ft_traitement_hexa_width(len, i, n, m);
+		ft_traitement_u_width(len, i, n);
 	else
 	{
 		if (g_prec > len)
-			ft_traitment_hexa_prec(n, len, m);
+			ft_traitment_u_prec(n, len);
 		else
-			ft_puthexa_compt(n, m);
+			ft_putnbr_u_compt(n);
 	}
 	return (j + 1);
 }

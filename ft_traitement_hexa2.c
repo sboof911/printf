@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:58:02 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/20 18:14:30 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/21 21:02:56 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,15 @@ void	ft_traitement_hexa_width(int len, int i, unsigned int n, int m)
 
 void	ft_traitement_hexa_null(unsigned int n, int m)
 {
-	if ((n == 0) & g_width & g_prec)
+	if ((n == 0) && !g_width && !g_prec && !g_dot)
+		ft_putchar('0');
+	else if ((n == 0) && g_width == 0 && g_prec == 0 && g_dot)
 		write(1, "", 0);
+	else if (g_width > 0 && n == 0 && !g_prec && g_dot)
+	{
+		while (g_width--)
+			ft_putchar(' ');
+	}
 	else
 		ft_puthexa_compt(n, m);
 }

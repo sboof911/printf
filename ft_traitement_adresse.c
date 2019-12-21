@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 14:44:13 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/20 21:26:54 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/21 21:43:50 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ int		ft_adresse(va_list list, int j, int m)
 	n = va_arg(list, unsigned long long);
 	g_width = g_width - 2;
 	len = ft_adresselen(n);
-	if (g_width == 0 && g_prec == 0)
+	if (g_prec == 0 && n == 0 && g_dot)
 		ft_adresse_null(n, m);
 	else if (g_zero && !g_prec)
 		ft_adresse_zero(len, i, n, m);

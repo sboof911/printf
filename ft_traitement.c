@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 18:30:24 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/20 18:10:23 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/21 14:38:22 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,11 @@ int		ft_traitement_width(const char *s, int i, va_list list)
 		while (ft_isdigit(s[i]))
 			i++;
 	}
-	else if (s[i++] == '*')
+	else if (s[i] == '*')
+	{
 		g_width = va_arg(list, int);
+		i++;
+	}
 	if (g_width < 0)
 	{
 		g_moin = 1;
