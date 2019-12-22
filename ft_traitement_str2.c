@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 20:37:24 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/20 21:12:30 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/22 15:45:05 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ft_traitement_putstr_prec(char *str, int len)
 	int	j;
 
 	j = 0;
-	
 	if (g_prec < len && g_prec > 0)
 	{
 		while (j < g_prec)
@@ -68,4 +67,17 @@ void	ft_less_dot(void)
 	}
 	else
 		write(0, "", 1);
+}
+
+void	ft_str_lol(int len, char *str)
+{
+	if (g_width)
+	{
+		if (g_width > len)
+			ft_traitement_str__prec(str, len);
+		else
+			ft_traitement_str_(str, len);
+	}
+	else
+		ft_traitement_putstr_prec(str, len);
 }

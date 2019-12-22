@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:48:50 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/21 21:09:51 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/22 14:08:35 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int		ft_traitement_hexa(va_list list, int j, int m)
 	len = ft_hexalen(n);
 	if (g_prec == 0 && n == 0 && g_dot)
 		ft_traitement_hexa_null(n, m);
-	else if (g_zero && !g_prec)
+	else if (g_zero && !g_prec && !g_moin)
 		ft_traitemt_hexa_zero(len, i, n, m);
 	else if (g_moin)
 		ft_traitemt_hexa_moin(len, i, n, m);

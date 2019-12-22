@@ -6,16 +6,16 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 17:18:07 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/21 20:57:54 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/22 15:52:09 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int     ft_traitement_char(va_list list, int i)
+int		ft_traitement_char(va_list list, int i)
 {
-	int     c;
-	int     j;
+	int		c;
+	int		j;
 
 	j = 0;
 	if (!g_p)
@@ -32,25 +32,31 @@ int     ft_traitement_char(va_list list, int i)
 		}
 	}
 	else if (!g_zero)
-	{
-		if (g_width > 1)
-		{
-			while (j < g_width - 1)
-				j = ft_put(j);
-		}
-		ft_putchar(c);
-	}
+		ft_char_zero(j, c);
 	else if (c == '%')
-	{
-		if (g_width > 1)
-		{
-			while (j < g_width - 1)
-			{
-				ft_putchar('0');
-				j++;
-			}
-		}
-		ft_putchar(c);
-	}
+		ft_char_lol(j, c);
 	return (i + 1);
+}
+
+void	ft_char_lol(int j, int c)
+{
+	if (g_width > 1)
+	{
+		while (j < g_width - 1)
+		{
+			ft_putchar('0');
+			j++;
+		}
+	}
+	ft_putchar(c);
+}
+
+void	ft_char_zero(int j, int c)
+{
+	if (g_width > 1)
+	{
+		while (j < g_width - 1)
+			j = ft_put(j);
+	}
+	ft_putchar(c);
 }

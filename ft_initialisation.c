@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 18:14:06 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/20 21:03:11 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/22 15:29:54 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int		ft_initialisation(const char *s, int i)
 	while (s[i] != '%' && s[i] != '\0')
 	{
 		ft_putchar(s[i]);
-		
 		i++;
 	}
 	return (i);

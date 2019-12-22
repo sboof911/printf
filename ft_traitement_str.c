@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 20:20:30 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/20 21:17:51 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/22 15:45:28 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	ft_traitement_str_moin(char *str)
 	{
 		ft_putchar(str[j]);
 		j++;
-		
 	}
 	while (j++ < g_width)
 		ft_putchar(' ');
@@ -47,15 +46,14 @@ void	ft_traitement_str_moin(char *str)
 void	ft_traitement_str__prec(char *str, int len)
 {
 	int		j;
+	int		i;
 
 	j = 0;
+	i = 0;
 	if (g_prec < len && g_prec > 0)
 	{
-		while (g_width - g_prec > 0)
-		{
-			ft_putchar(' ');
-			g_width--;
-		}
+		while (g_width - g_prec > i)
+			i = ft_put(i);
 		while (j < g_prec)
 		{
 			ft_putchar(str[j]);
@@ -64,11 +62,8 @@ void	ft_traitement_str__prec(char *str, int len)
 	}
 	else
 	{
-		while (g_width - len > 0)
-		{
-			ft_putchar(' ');
-			g_width--;
-		}
+		while (g_width - len > i)
+			i = ft_put(i);
 		while (j < len)
 		{
 			ft_putchar(str[j]);
@@ -80,16 +75,14 @@ void	ft_traitement_str__prec(char *str, int len)
 void	ft_traitement_str_(char *str, int len)
 {
 	int		j;
+	int		i;
 
+	i = 0;
 	j = 0;
-
 	if (g_prec < len && g_width > g_prec && g_prec > 0)
 	{
-		while (g_width - g_prec > 0)
-		{
-			ft_putchar(' ');
-			g_width--;
-		}
+		while (g_width - g_prec > i)
+			i = ft_put(i);
 		while (j < g_prec)
 		{
 			ft_putchar(str[j]);
@@ -125,16 +118,6 @@ int		ft_traitement_str(va_list list, int i)
 	else if (g_moin)
 		ft_lol_lol(str, len);
 	else
-	{
-		if (g_width)
-		{
-			if (g_width > len)
-				ft_traitement_str__prec(str, len);
-			else
-				ft_traitement_str_(str, len);
-		}
-		else
-			ft_traitement_putstr_prec(str, len);
-	}
+		ft_str_lol(len, str);
 	return (i + 1);
 }

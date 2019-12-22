@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/21 16:13:56 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/21 20:27:00 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/22 15:48:17 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void	ft_traitment_u_prec(unsigned int n, int len)
 	int		i;
 
 	i = 0;
-
 	if (g_prec == 0 && g_dot && n == 0)
 		write(1, "", 0);
 	else if (g_prec < len)
@@ -77,7 +76,7 @@ void	ft_traitement_u_moin(int len, int i, unsigned int n)
 
 int		ft_traitement_u(va_list list, int j)
 {
-	unsigned int    n;
+	unsigned int	n;
 	int				len;
 	int				i;
 
@@ -86,7 +85,7 @@ int		ft_traitement_u(va_list list, int j)
 	len = ft_u_len(n);
 	if (g_prec == 0 && n == 0 && g_dot)
 		ft_traitement_u_null(n);
-	else if (g_zero && !g_prec)
+	else if (g_zero && !g_prec && !g_moin)
 		ft_traitement_u_zero(len, i, n);
 	else if (g_moin)
 		ft_traitement_u_moin(len, i, n);

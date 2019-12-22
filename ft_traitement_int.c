@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 14:58:00 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/21 16:27:52 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/22 15:27:06 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,8 @@ void	ft_traitement_int_zero(int len, int i, int n)
 	}
 	else if (g_prec == 0 && g_dot && n == 0)
 		i = ft_put(i);
-	else
-	{
-		if (n < 0)
-			ft_putchar('-');
-	}
+	if (n < 0 && !(g_width > len && g_dot == 0))
+		ft_putchar('-');
 	ft_putnbr_compt(n);
 }
 
@@ -44,7 +41,6 @@ void	ft_traitment_int_prec(int n, int len)
 	int		i;
 
 	i = 0;
-
 	if (g_prec == 0 && g_dot && n == 0)
 		write(1, "", 0);
 	else if (g_prec < len)
@@ -124,7 +120,7 @@ int		ft_traitement_int(va_list list, int j)
 		len = 11;
 	if (g_prec == 0 && n == 0 && g_dot)
 		ft_traitement_null(n);
-	else if (g_zero && !g_prec)
+	else if (g_zero && !g_prec && !g_moin)
 		ft_traitement_int_zero(len, i, n);
 	else if (g_moin)
 		ft_traitement_int_moin(len, i, n);
@@ -135,11 +131,7 @@ int		ft_traitement_int(va_list list, int j)
 		if (g_prec > len)
 			ft_traitment_int_prec(n, len);
 		else
-		{
-			if (n < 0)
-				ft_putchar('-');
-			ft_putnbr_compt(n);
-		}
+			ft_lool2(n);
 	}
 	return (j + 1);
 }

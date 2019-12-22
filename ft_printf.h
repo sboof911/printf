@@ -6,19 +6,18 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 18:18:44 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/21 20:27:53 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/22 15:52:17 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <stdarg.h>
-#include <stdio.h>
-#include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <string.h>
+# include <stdarg.h>
+# include <stddef.h>
 
 int		g_compt;
 int		g_zero;
@@ -27,9 +26,9 @@ int		g_spider;
 int		g_prec;
 int		g_dot;
 int		g_moin;
-int     g_m;
-int     g_pc;
-int     g_p;
+int		g_m;
+int		g_pc;
+int		g_p;
 
 int		ft_atoi(const char *s);
 int		ft_isdigit(int c);
@@ -55,8 +54,8 @@ int		ft_traitement_int(va_list list, int j);
 int		ft_intlen(int j);
 int		ft_putnbr_prec(int n, int i);
 void	ft_putnbr_compt(int n);
-void    ft_putstr(char *str);
-void    ft_traitement_int_width(int len, int i, int n);
+void	ft_putstr(char *str);
+void	ft_traitement_int_width(int len, int i, int n);
 void	ft_traitement_int_moin(int len, int i, int n);
 void	ft_traitment_int_prec(int n, int len);
 void	ft_traitement_int_zero(int len, int i, int n);
@@ -88,7 +87,7 @@ int		ft_adresselen(unsigned long long j);
 void	ft_adresse_moin(int len, int i, unsigned long long n, int m);
 int		ft_traitement_hexa(va_list list, int j, int m);
 int		ft_adresse(va_list list, int j, int m);
-int     ft_traitement_char(va_list list, int i);
+int		ft_traitement_char(va_list list, int i);
 char	*ft_strdup(const char *s);
 void	ft_less_dot(void);
 int		ft_traitement_u(va_list list, int j);
@@ -100,5 +99,12 @@ void	ft_traitement_u_null(unsigned int n);
 void	ft_some_u(int len, int i, unsigned int n);
 int		ft_u_len(unsigned int j);
 void	ft_putnbr_u_compt(unsigned int n);
+int		ft_lool(const char *s, va_list list, int i);
+void	ft_lool2(int n);
+void	ft_tr_width(void);
+int		ft_tr_pc(int i);
+void	ft_str_lol(int len, char *str);
+void	ft_char_lol(int j, int c);
+void	ft_char_zero(int j, int c);
 
 #endif

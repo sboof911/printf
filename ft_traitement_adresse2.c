@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 14:44:05 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/21 21:51:06 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/22 15:18:43 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_adresse_width(int len, int i, unsigned long long n, int m)
 			while (i < g_width - g_prec)
 			{
 				ft_putchar(' ');
-				
 				i++;
 			}
 			ft_adresse_prec(n, len, m);
@@ -34,7 +33,6 @@ void	ft_adresse_width(int len, int i, unsigned long long n, int m)
 		while (i < g_width - len)
 		{
 			ft_putchar(' ');
-			
 			i++;
 		}
 		ft_puthexa_compt(n, m);
@@ -67,7 +65,6 @@ void	ft_adresse_null(unsigned long long n, int m)
 		ft_putchar('x');
 		while (g_width--)
 			ft_putchar(' ');
-
 	}
 }
 

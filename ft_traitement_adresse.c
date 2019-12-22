@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 14:44:13 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/21 21:43:50 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/22 15:01:06 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	ft_adresse_zero(int len, int i, unsigned long long n, int m)
 		{
 			ft_putchar('0');
 			i++;
-			
 		}
 	}
 	if (g_width > len && g_dot)
@@ -49,7 +48,6 @@ void	ft_adresse_prec(unsigned long long n, int len, int m)
 		{
 			ft_putchar('0');
 			i++;
-			
 		}
 		ft_puthexa_compt(n, m);
 	}
@@ -99,8 +97,8 @@ void	ft_adresse_moin(int len, int i, unsigned long long n, int m)
 int		ft_adresse(va_list list, int j, int m)
 {
 	unsigned long long	n;
-	int		len;
-	int		i;
+	int					len;
+	int					i;
 
 	i = 0;
 	n = va_arg(list, unsigned long long);
@@ -108,7 +106,7 @@ int		ft_adresse(va_list list, int j, int m)
 	len = ft_adresselen(n);
 	if (g_prec == 0 && n == 0 && g_dot)
 		ft_adresse_null(n, m);
-	else if (g_zero && !g_prec)
+	else if (g_zero && !g_prec && !g_moin)
 		ft_adresse_zero(len, i, n, m);
 	else if (g_moin)
 		ft_adresse_moin(len, i, n, m);

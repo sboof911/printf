@@ -6,7 +6,7 @@
 /*   By: amaach <amaach@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 21:03:40 by amaach            #+#    #+#             */
-/*   Updated: 2019/12/20 18:32:58 by amaach           ###   ########.fr       */
+/*   Updated: 2019/12/22 15:47:14 by amaach           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_trait_hexa_ma(unsigned long long nb)
 		ft_putchar('E');
 	if (nb == 15)
 		ft_putchar('F');
-	
 }
 
 void	ft_trait_hexa_m(unsigned long long nb)
@@ -43,14 +42,13 @@ void	ft_trait_hexa_m(unsigned long long nb)
 		ft_putchar('e');
 	if (nb == 15)
 		ft_putchar('f');
-	
 }
 
 void	ft_put16(unsigned long long nb, int m)
 {
-	int		i = 0;
+	int		i;
 
-i++;
+	i = 1;
 	ft_puthexa_compt(nb / 16, m);
 	if (nb % 16 > 9)
 	{
